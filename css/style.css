@@ -1,0 +1,130 @@
+@import url("photographer.css");
+
+:root {
+    --color-primary: #901C1C; /* Couleur principale */
+    --color-secondary: #DB8876; /* Couleur secondaire */
+    --color-tertiary: #333; /* Couleur tertiaire */
+}
+
+a:focus,
+button:focus,
+.like-button:focus,
+.lienMedia:focus {
+    outline: 5px solid var(--color-primary);      
+    outline-offset: 5px;
+}
+
+    
+
+body {
+    font-family: "DM Sans", sans-serif;
+    max-width: 1300px;
+    padding: 40px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 0 6rem;
+}
+
+header {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.portrait_photographe {
+    object-fit: cover;
+    object-position: center;
+}
+
+h1 {
+    color: var(--color-primary);
+    margin-right: 100px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.logo1 {
+    width: 67%;
+    height: 100%;
+    margin-left: 100px;
+    position: relative;
+}
+
+/* Ajout de l'animation sous le logo */
+.logo1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2px; /* Ajustez cette valeur si nécessaire pour bien positionner la ligne */
+    height: 2px;
+    width: 0; /* Largeur initiale de la ligne */
+    background-color: var(--color-secondary); /* Couleur de la ligne */
+    transition: width 0.2s ease-in-out; /* Animation de la largeur */
+}
+
+.logo1:hover::after {
+    width: 80%; /* Largeur de la ligne au survol */
+}
+
+.Photographe_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+}
+
+.portrait_photographe {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    border: none;
+}
+
+.name_photographe {
+    color: var(--color-tertiary);
+    font-size: 2rem;
+    padding-top: 10px;
+}
+
+.vers_page_photographe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+    position: relative;
+}
+
+.vers_page_photographe::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    height: 2px;
+    width: 0%;
+    background-color: var(--color-secondary);
+    transition: width 0.2s ease-in-out;
+}
+
+.vers_page_photographe:hover::after {
+    width: 80%;
+}
+
+.paysPhotographe {
+    display: flex;
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 2vw, 2rem);
+}
+.sr-only{
+    display:none;
+}
